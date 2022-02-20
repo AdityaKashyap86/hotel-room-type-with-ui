@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+</head>
+<body>
+<button><a th:href="@{/add-hotelInventory/create}">Add Customer</a></button><br>
+<table border="1px">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Total Inventory</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="hotelInvetory : ${hotelInventory}">
+    <td th:text="${hotelInventory.id}"></td>
+    <td th:text="${hotelInventory.totalInventory}"></td>
+    <td>
+      <button><a th:href="@{/hotelInventories/{id} (id=${customer.id})}">save</a></button>
+      <button><a th:href="@{/hotelInventories/delete/{id} (id=${customer.id})}">update</a></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

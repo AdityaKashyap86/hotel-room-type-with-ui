@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>add</title>
+</head>
+<body>
+<form th:action="@{/hotelInventories}" th:object="${hotelInventory}" method="post">
+    <table>
+        <tr th:if="${hotelInventory.id}">
+            <td>
+                <input type="text" th:field="*{id}" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" th:field="*{totalInventory}" placeholder="Total Inventory">
+            </td>
+
+        <tr>
+            <td>
+                <input type="submit" value="Save">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
